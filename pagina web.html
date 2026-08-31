@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIJM - Concesionario de Motos</title>
+    <!-- Aquí se coloca la parte del css con la hoja de estiloss 
+    <-- <link rel="stylesheet" href="estilos.css"> -->
+</head>
+<body>
+
+    <!-- ENCABEZADO Y NAVEGACIÓN -->
+    <header>
+        <h1>TIJM Motos</h1>
+        <nav>
+            <ul>
+                
+                <li><a href="#inicio">Inicio / Catálogo</a></li>
+                <li><a href="#nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <main>
+
+        <!---->: INICIO / CATÁLOGO ---
+        <section id="inicio">
+            <h2>Modelos Destacados</h2>
+            <p>Descubre nuestro catálogo con las mejores opciones para moverte por la ciudad o salir a rodar.</p>
+
+            <!-- Se usa <article> para cada producto independiente -->
+            <article>
+                <h3>Kawasaki Ninja 500</h3>
+                <p>Deportividad y potencia para los pilotos más exigentes.</p>
+            </article>
+
+            <article>
+                <h3>Suzuki Gixxer</h3>
+                <p>Diseño aerodinámico y excelente rendimiento de combustible para tu día a día.</p>
+            </article>
+
+            <article>
+                <h3>Honda CB190R</h3>
+                <p>Estilo naked con tecnología avanzada y una excelente posición de manejo.</p>
+            </article>
+
+            <article>
+                <h3>NKD 125</h3>
+                <p>La opción clásica, ligera y perfecta para el trabajo o el transporte urbano.</p>
+            </article>
+        </section>
+
+        <!-- SECCIÓN 2: SOBRE MÍ / PROYECTO -->
+        <section id="nosotros">
+            <h2>Sobre TIJM</h2>
+            <p>En el concesionario TIJM somos unos apasionados por el mundo de las dos ruedas. Nuestro objetivo es ofrecer modelos que se adapten a las necesidades de cada piloto, brindando la mejor asesoría técnica para que encuentres tu máquina ideal.</p>
+        </section>
+
+        <!-- SECCIÓN 3: CONTACTO Y FORMULARIO ACCESIBLE -->
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <p>¿Te interesa agendar un test drive o cotizar una moto? Déjanos tus datos.</p>
+
+            
+            <form action="#" method="POST">
+                <div>
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div>
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="modelo">Moto de interés:</label>
+                    <select id="modelo" name="modelo">
+                        <option value="ninja">Kawasaki Ninja 500</option>
+                        <option value="gixxer">Suzuki Gixxer</option>
+                        <option value="honda">Honda CB190R</option>
+                        <option value="nkd">NKD 125</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="mensaje">Mensaje o duda:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                </div>
+
+                <button type="submit">Enviar solicitud</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 Concesionario TIJM. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
