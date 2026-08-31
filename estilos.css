@@ -1,0 +1,324 @@
+/* =========================================================
+   TIJM MOTOS — Hoja de estilos
+   Tokens de diseño:
+   - Fondo principal (carbón):        #16171A
+   - Superficie / paneles:            #202126
+   - Superficie de tarjetas:          #26282E
+   - Borde sutil:                     #34363C
+   - Texto principal:                 #EDEDE9
+   - Texto atenuado:                  #A6A8AD
+   - Acento (amarillo casco/pista):   #F2B705
+   - Tipografía de títulos: "Oswald" (condensada, fuerte)
+   - Tipografía de cuerpo: "Inter"
+   ========================================================= */
+
+:root {
+    --color-fondo: #16171A;
+    --color-superficie: #202126;
+    --color-tarjeta: #26282E;
+    --color-borde: #34363C;
+    --color-texto: #EDEDE9;
+    --color-texto-tenue: #A6A8AD;
+    --color-acento: #F2B705;
+    --color-acento-texto: #16171A; /* texto oscuro sobre fondo amarillo */
+
+    --fuente-titulos: "Oswald", "Arial Narrow", sans-serif;
+    --fuente-cuerpo: "Inter", system-ui, -apple-system, sans-serif;
+
+    --radio-borde: 4px;
+    --ancho-contenido: 1100px;
+}
+
+/* Respeta la preferencia de movimiento reducido del usuario */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ---------- Reset básico ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-cuerpo);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0 0 0.5em;
+}
+
+p {
+    margin: 0 0 1em;
+    max-width: 68ch; /* líneas legibles, menos de 80 caracteres */
+}
+
+a {
+    color: var(--color-acento);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    text-decoration-thickness: 2px;
+}
+
+/* ---------- Foco visible accesible (no depende solo del color) ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 2px;
+    border-radius: var(--radio-borde);
+}
+
+/* ---------- Enlace "saltar al contenido" ---------- */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--color-acento);
+    color: var(--color-acento-texto);
+    padding: 0.75em 1.25em;
+    font-family: var(--fuente-cuerpo);
+    font-weight: 600;
+    z-index: 100;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    left: 1em;
+    top: 1em;
+}
+
+/* =========================================================
+   ENCABEZADO Y NAVEGACIÓN
+   Mobile-first: apilado en columna; se vuelve fila en tablet+
+   ========================================================= */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--color-superficie);
+    border-bottom: 3px solid var(--color-acento);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.03em;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+}
+
+nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.35rem 0.6rem;
+    border-radius: var(--radio-borde);
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--color-acento-texto);
+    background-color: var(--color-acento);
+    text-decoration: none;
+}
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: var(--ancho-contenido);
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 3.5rem;
+}
+
+section h2 {
+    font-size: 1.75rem;
+    color: var(--color-acento);
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* ---------- Catálogo (Flexbox) ---------- */
+.catalogo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.catalogo article {
+    flex: 1 1 100%;
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-left: 4px solid var(--color-acento);
+    border-radius: var(--radio-borde);
+    padding: 1.25rem 1.5rem;
+}
+
+.catalogo article h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+}
+
+.catalogo article p {
+    color: var(--color-texto-tenue);
+    margin-bottom: 0;
+    max-width: none;
+}
+
+/* ---------- Sección "Sobre TIJM" ---------- */
+#nosotros p {
+    color: var(--color-texto-tenue);
+}
+
+/* ---------- Formulario de contacto (Flexbox) ---------- */
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    max-width: 32rem;
+    margin-top: 1.5rem;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: 1.5rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.campo label {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+input,
+select,
+textarea {
+    font-family: var(--fuente-cuerpo);
+    font-size: 1rem;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: 0.6rem 0.75rem;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    align-self: flex-start;
+    background-color: var(--color-acento);
+    color: var(--color-acento-texto);
+    border: none;
+    border-radius: var(--radio-borde);
+    padding: 0.75rem 1.5rem;
+    font-family: var(--fuente-cuerpo);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #ffd23f;
+}
+
+/* =========================================================
+   PIE DE PÁGINA
+   ========================================================= */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--color-texto-tenue);
+    border-top: 1px solid var(--color-borde);
+    font-size: 0.9rem;
+}
+
+/* =========================================================
+   BREAKPOINT 1 — TABLET (≥600px)
+   ========================================================= */
+@media (min-width: 600px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.25rem 2rem;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 1.25rem;
+    }
+
+    .catalogo article {
+        flex: 1 1 calc(50% - 1.25rem); /* 2 columnas */
+    }
+}
+
+/* =========================================================
+   BREAKPOINT 2 — ESCRITORIO (≥1024px)
+   ========================================================= */
+@media (min-width: 1024px) {
+    main {
+        padding-top: 3rem;
+    }
+
+    .catalogo {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .catalogo article {
+        flex: 1 1 calc(25% - 1.25rem); /* 4 columnas */
+    }
+
+    #contacto form {
+        padding: 2rem;
+    }
+}
