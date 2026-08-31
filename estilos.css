@@ -1,17 +1,3 @@
-/* =========================================================
-   TIJM MOTOS — Hoja de estilos
-   Tokens de diseño:
-   - Fondo principal (carbón):        #16171A
-   - Superficie / paneles:            #202126
-   - Superficie de tarjetas:          #26282E
-   - Borde sutil:                     #34363C
-   - Texto principal:                 #EDEDE9
-   - Texto atenuado:                  #A6A8AD
-   - Acento (amarillo casco/pista):   #F2B705
-   - Tipografía de títulos: "Oswald" (condensada, fuerte)
-   - Tipografía de cuerpo: "Inter"
-   ========================================================= */
-
 :root {
     --color-fondo: #16171A;
     --color-superficie: #202126;
@@ -39,7 +25,7 @@
     }
 }
 
-/* ---------- Reset básico ---------- */
+/* Reset básico */
 *,
 *::before,
 *::after {
@@ -81,7 +67,7 @@ a:hover {
     text-decoration-thickness: 2px;
 }
 
-/* ---------- Foco visible accesible (no depende solo del color) ---------- */
+/* Foco visible accesible (no depende solo del color) */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -92,7 +78,7 @@ textarea:focus-visible {
     border-radius: var(--radio-borde);
 }
 
-/* ---------- Enlace "saltar al contenido" ---------- */
+/* Enlace "saltar al contenido" */
 .skip-link {
     position: absolute;
     left: -999px;
@@ -111,10 +97,10 @@ textarea:focus-visible {
     top: 1em;
 }
 
-/* =========================================================
+/*
    ENCABEZADO Y NAVEGACIÓN
    Mobile-first: apilado en columna; se vuelve fila en tablet+
-   ========================================================= */
+*/
 header {
     display: flex;
     flex-direction: column;
@@ -159,9 +145,9 @@ nav a:focus-visible {
     text-decoration: none;
 }
 
-/* =========================================================
+/* 
    CONTENEDOR PRINCIPAL
-   ========================================================= */
+*/
 main {
     display: flex;
     flex-direction: column;
@@ -179,7 +165,7 @@ section h2 {
     margin-bottom: 1rem;
 }
 
-/* ---------- Catálogo (Flexbox) ---------- */
+/* Catálogo (Flexbox) */
 .catalogo {
     display: flex;
     flex-direction: column;
@@ -207,12 +193,12 @@ section h2 {
     max-width: none;
 }
 
-/* ---------- Sección "Sobre TIJM" ---------- */
+/* Sección "Sobre TIJM" */
 #nosotros p {
     color: var(--color-texto-tenue);
 }
 
-/* ---------- Formulario de contacto (Flexbox) ---------- */
+/* Formulario de contacto (Flexbox) */
 #contacto form {
     display: flex;
     flex-direction: column;
@@ -270,9 +256,9 @@ button[type="submit"]:hover {
     background-color: #ffd23f;
 }
 
-/* =========================================================
+/*
    PIE DE PÁGINA
-   ========================================================= */
+ */
 footer {
     text-align: center;
     padding: 1.5rem;
@@ -281,9 +267,9 @@ footer {
     font-size: 0.9rem;
 }
 
-/* =========================================================
+/* 
    BREAKPOINT 1 — TABLET (≥600px)
-   ========================================================= */
+*/
 @media (min-width: 600px) {
     header {
         flex-direction: row;
@@ -301,9 +287,9 @@ footer {
     }
 }
 
-/* =========================================================
+/*
    BREAKPOINT 2 — ESCRITORIO (≥1024px)
-   ========================================================= */
+*/
 @media (min-width: 1024px) {
     main {
         padding-top: 3rem;
